@@ -28,10 +28,10 @@ else
 fi
 
 # Set defaults
-AUTO_REBOOT_AT_UPGRADE=${AUTO_REBOOT_AT_UPGRADE:-true}
+AUTO_REBOOT_AT_UPGRADE=${AUTO_REBOOT_AT_UPGRADE:-false}
 NONROOT_USERNAME=${NONROOT_USERNAME:-toor}
 NONROOT_SSH=${NONROOT_SSH:-y}
-SSH_PORT=${SSH_PORT:-22}
+SSH_PORT=${SSH_PORT:-12070}
 FIREWALL=${FIREWALL:-n}
 
 # Exit if error
@@ -53,7 +53,7 @@ source ./02-autoupdate.sh
 source ./03-zsh.sh
 
 ## Add swap space (1 + size of ram)
-source ./04-swap.sh
+# source ./04-swap.sh
 
 if [ "$SILENT_INSTALL" ]; then
 	echo "Silent install does NOT create nonroot user"
